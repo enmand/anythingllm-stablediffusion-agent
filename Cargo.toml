@@ -1,0 +1,24 @@
+[package]
+name = "txt2img"
+version = "0.1.0"
+description = "anythingllm-txt2img agent"
+license = "MIT"
+edition = "2021"
+exclude = ["index.node"]
+
+[lib]
+crate-type = ["cdylib"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+anyhow = "1.0.89"
+base64 = "0.22.1"
+candle-core = { version = "0.6.0", features = ["accelerate", "metal"] }
+candle-transformers = { version = "0.6.0", features = ["accelerate", "metal"] }
+hf-hub = "0.3.2"
+image = "0.25.2"
+neon = "1"
+serde = "1.0.210"
+serde_json = "1.0.128"
+tokenizers = "0.20.0"

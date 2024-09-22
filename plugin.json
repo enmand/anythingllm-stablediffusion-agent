@@ -1,0 +1,55 @@
+{
+  "active": true,
+  "hubId": "txt2img",
+  "name": "Generate an image from a prompt",
+  "schema": "skill-1.0.0",
+  "version": "0.1.0",
+  "description": "This skill generates an image from a prompt, when givena  prompt, it will generate an image and return the image",
+  "author": "@enmand",
+  "author_url": "https://github.com/enmand",
+  "license": "MIT",
+  "setup_args": {
+    "MODEL": {
+      "type": "string",
+      "description": "The stable diffusion model to use",
+      "input": {
+        "type": "text",
+        "hint": "Choose a stable diffusion model to use. Supported values are: turbo, xl, sd2.1"
+      },
+      "value": "xl"
+    },
+    "USE_FP_16": {
+      "type": "string",
+      "description": "Whether to use f16",
+      "input": {
+        "type": "number",
+        "hint": "Whether to use f16 models, this will speed up the model but may reduce quality. Only use this if you are sure you want to use f16 models. 0 for false, >=1 for true"
+      },
+      "value": "0"
+    },
+    "USE_CPU": {
+      "type": "string",
+      "description": "Whether to use CPU",
+      "input": {
+        "type": "number",
+        "hint": "Whether to use CPU models. Only use this if you are sure you want to use CPU models. 0 for false, >=1 for true"
+      },
+      "value": "0"
+    }
+  },
+  "examples": [],
+  "entrypoint": {
+    "file": "handler.js",
+    "params": {
+      "prompt": {
+        "type": "string",
+        "description": "The prompt to generate the image from"
+      },
+      "negative_prompt": {
+        "type": "string",
+        "description": "The negative prompt to use when generate the image from"
+      }
+    }
+  },
+  "imported": true
+}
